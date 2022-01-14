@@ -44,7 +44,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@main
-    - uses: jeanlescure/react-deploy-to-s3-action@main
+    - uses: BeautyIndustryGroup/react-deploy-to-s3-action@main
       with:
         args: --acl public-read --follow-symlinks --delete
       env:

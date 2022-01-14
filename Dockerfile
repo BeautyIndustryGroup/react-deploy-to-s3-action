@@ -1,4 +1,17 @@
-FROM jeanlescure/node-awscli:latest
+FROM node:current-alpine
+
+RUN apk --no-cache add \ 
+            bash \
+            curl \
+            less \
+            groff \
+            jq \
+            git \
+            python3 \
+            py3-pip \
+            py-pip && \
+            pip install --upgrade pip awscli s3cmd && \
+            mkdir /root/.aws
 
 LABEL "com.github.actions.name"="React Deploy to S3"
 LABEL "com.github.actions.description"="Build a React.js web app and sync to an AWS S3 repository"
