@@ -43,7 +43,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@main
+    - uses: actions/checkout@3
     - uses: BeautyIndustryGroup/react-deploy-to-s3-action@main
       with:
         args: --acl public-read --follow-symlinks --delete
