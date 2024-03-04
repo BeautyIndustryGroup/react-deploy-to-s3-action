@@ -1,4 +1,5 @@
 #!/bin/sh
+source /s3deploy/bin/activate
 
 set -e
 
