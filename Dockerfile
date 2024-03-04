@@ -1,4 +1,4 @@
-FROM node:20-alpine
+FROM node:lts-alpine
 
 RUN apk --no-cache add \ 
             bash \
@@ -10,6 +10,8 @@ RUN apk --no-cache add \
             python3 \
             py3-pip \
             py-pip && \
+            python3 -m venv s3deploy && \
+            source ./s3deploy/bin/activate && \
             pip install --upgrade pip awscli s3cmd && \
             mkdir /root/.aws
 
